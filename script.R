@@ -3,7 +3,8 @@ library(tidyverse)
 # Unos datos
 dt <- iris
 
-# Un gráfico
-ggplot(dt, aes(x = Sepal.Length, y = Petal.Length)) +
+# Un gráfico, 
+# pero ahora mejor grafico esto...
+ggplot(dt, aes(x = Sepal.Length, y = Petal.Width)) +
   geom_point() +
   geom_smooth()
