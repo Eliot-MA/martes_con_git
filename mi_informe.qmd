@@ -1,0 +1,39 @@
+---
+title: "Mi informe"
+author: "Eliot Mompeán"
+format: typst
+---
+
+# Introducción
+
+Estoy en el curso del IPE en la introducción a Quarto. 
+
+```{r, esto es un chunk}
+#| echo: FALSE
+#| message: FALSE
+#########^^^^^ para que no me lo muestre
+
+library(tidyverse)
+library(here)
+```
+
+# Resultados
+
+Cargo mis datos de semillas.
+```{r}
+df <- read.csv("data/seedlings.csv")
+```
+
+La media de los frutos es `r mean(df$count, na.rm=TRUE)`. 
+
+Aquí he hecho mi primera figura (@fig-mi_figura). 
+
+```{r}
+#| fig-cap: "mi primera figura"
+#| label: fig-mi_figura
+ggplot(df, aes(y = count, x = light)) + 
+  geom_point()
+```
+
+
+
